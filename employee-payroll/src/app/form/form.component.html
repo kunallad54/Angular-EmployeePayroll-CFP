@@ -1,0 +1,114 @@
+<div class="form-content">
+    <!--UC 2-->
+    <form class="form" [formGroup]="employeeFormGroup" action="#" onreset="resetForm()" (ngSubmit)="submit()">
+        <div class="form-head">
+            Employee Payroll Form
+        </div>
+        <!-------Input Name--------->
+        <div class="row-content">
+            <mat-label class="label text">Full Name</mat-label>
+            <mat-form-field class="example-full-width" appearance="outline">
+                <input id="name" ngDefaultControl class="name-input" matInput placeholder="Ex. Krunal Lad"
+                    formControlName="empName" required>
+            </mat-form-field>
+        </div>
+
+        <!------Profile image---------->
+        <div class="row-content">
+            <label class="label text" for="profile">Profile Image </label>
+            <div class="profile-radio-content">
+                <mat-radio-button ngDefaultControl class=profile-width type="radio" id="profile1" name="profile"
+                    color="primary" value="../assets/profile-images/Ellipse -1.png" formControlName="empProfilePic"
+                    required>
+                    <img class="profile" type="radio" id='image1' src="../assets/profile-images/Ellipse -1.png">
+                </mat-radio-button>
+                <mat-radio-button ngDefaultControl class=profile-width type="radio" id="profile2" name="profile"
+                    color="primary" value="../assets/profile-images/Ellipse -2.png" formControlName="empProfilePic"
+                    required>
+                    <img class="profile" id='image2' src="../assets/profile-images/Ellipse -2.png">
+                </mat-radio-button>
+                <mat-radio-button ngDefaultControl class=profile-width type="radio" id="profile3" name="profile"
+                    color="primary" value="../assets/profile-images/Ellipse -3.png" formControlName="empProfilePic"
+                    required>
+                    <img class="profile" id='image3' src="../assets/profile-images/Ellipse -3.png">
+                </mat-radio-button>
+                <mat-radio-button ngDefaultControl class=profile-width type="radio" id="profile4" name="profile"
+                    color="primary" value="../assets/profile-images/Ellipse -4.png" formControlName="empProfilePic"
+                    required>
+                    <img class="profile" id='image4' src="../assets/profile-images/Ellipse -4.png">
+                </mat-radio-button>
+                <mat-radio-button ngDefaultControl class=profile-width type="radio" id="profile5" name="profile"
+                    color="primary" value="../assets/profile-images/Ellipse -5.png" formControlName="empProfilePic"
+                    required>
+                    <img class="profile" id='image5' src="../assets/profile-images/Ellipse -5.png">
+                </mat-radio-button>
+            </div>
+        </div>
+
+
+        <!-----Input Gender--------->
+        <div class="row-content">
+            <label class="label text" for="gender">Gender</label>
+            <div>
+                <mat-radio-button ngDefaultControl type="radio" id="male" name="gender" color="primary" value="male"
+                    formControlName="empGender" required>
+                    <label class="text" for="male">Male</label>
+                </mat-radio-button>
+                <mat-radio-button ngDefaultControl type="radio" id="female" name="gender" color="primary" value="female"
+                    formControlName="empGender" required>
+                    <label class="text" for="female">Female</label>
+                </mat-radio-button>
+            </div>
+        </div>
+
+        <!-- ----Input Department----- -->
+        <div class="row-content">
+            <label class="label text" for="depatment">Department</label>
+            <div *ngFor="let department of Departments">
+                <mat-checkbox #checkbox class="checkbox" type="checkbox" color="primary" [value]="department.value"
+                    (change)="onCheckboxChange($event)">
+                    <label class="text">{{department.name}}</label>
+                </mat-checkbox>
+            </div>
+        </div>
+
+        <!-----Input Salary------>
+        <div class="row-content">
+            <label class="label text" for="salary">Choose your Salary </label>
+            <mat-slider thumbLabel [displayWith]="formatLabel" #empSalary (change)="updateSetting($event)"
+                color="primary" tickInterval="1000" aria-label="units" class="salary-input" name="salary" min="300000"
+                max="500000" step="1000" [value]="salary" formControlName="empSalary">
+            </mat-slider>
+        </div>
+
+        <!-------Input Date------>
+        <div class="row-content">
+            <label class="label text" for="startDate"> Start Date </label>
+            <mat-form-field>
+                <input matInput [matDatepicker]="picker" placeholder="Choose a date" formControlName="startDate">
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+        </div>
+
+        <!------Input Notes------->
+        <div class="row-content">
+            <mat-label class="label text">Notes</mat-label>
+            <mat-form-field class="example-full-width" appearance="outline">
+                <textarea matInput id="notes" class="input" name="Notes" formControlName="note" placeholder="" style="height:100px"
+                    required></textarea>
+            </mat-form-field>
+        </div>
+
+        <div class="buttonParent">
+            <a routerLink="/home">
+                <button mat-raised-button color="accent" class="resetButton button cancelButton">Cancel</button>
+            </a>
+            <div class="submit-reset">
+                <button mat-raised-button color="accent" type="submit" class="button submitButton"
+                    id="submitButton">Submit</button>
+                <button mat-raised-button color="accent" type="reset" class="resetButton button">Reset</button>
+            </div>
+        </div>
+    </form>
+</div>
