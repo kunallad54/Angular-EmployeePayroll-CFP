@@ -13,12 +13,12 @@
    and add the HTTP delete() method to remove employee details from the database.
    
 5. Ability
-  * To add the HTTP protocol To edit employee details from the database using put().
-  * Integrate validation for all the employee payroll form fields.
-  * Updating user with error mesaages
-  * Updating user with service response message
-  * Using Pipe Concept to tranform date
-  * Updating UI of the Employee Payroll App.
+      * To add the HTTP protocol To edit employee details from the database using put().
+      * Integrate validation for all the employee payroll form fields.
+      * Updating user with error mesaages
+      * Updating user with service response message
+      * Using Pipe Concept to tranform date
+      * Updating UI of the Employee Payroll App.
 
 
 
