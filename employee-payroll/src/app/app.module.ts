@@ -9,7 +9,7 @@ import { HomeComponent } from './component/home/home.component';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { FormComponent } from './form/form.component';
+import { FormComponent } from './component/form/form.component';
 import { AngularMaterialModule } from './material/angular-material/angular-material.module';
 import { PipeTansformPipe } from './pipe/pipe-tansform.pipe';
 import { DialogBoxComponent } from './component/dialog-box/dialog-box.component';

@@ -3,10 +3,10 @@ import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@ang
 import { MatCheckboxChange } from '@angular/material/checkbox';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Emplpoyee } from '../model/emplpoyee';
-import { DataService } from '../service/data.service';
-import { HttpService } from '../service/http.service';
-import { DialogBoxComponent } from '../component/dialog-box/dialog-box.component';
+import { Emplpoyee } from '../../model/emplpoyee';
+import { DataService } from '../../service/data.service';
+import { HttpService } from '../../service/http.service';
+import { DialogBoxComponent } from '../dialog-box/dialog-box.component';
 @Component({
   selector: 'app-form',
   templateUrl: './form.component.html',
