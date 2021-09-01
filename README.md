@@ -1,6 +1,7 @@
 # Angular-EmployeePayroll-CFP
 
-### USECASES:
+### Features Added to Employee Payroll App:
+
 1. Ability to customize or add Header Portion of Employee Payroll App.
 
 2. Ability to design the Employee Payroll App's Home page and
