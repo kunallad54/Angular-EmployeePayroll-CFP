@@ -1,3 +1,6 @@
+/**
+ * Model Created for Employee Class
+ */
 export class Emplpoyee {
 
     empId!: number;
@@ -6,7 +9,7 @@ export class Emplpoyee {
     empProfilePic!: string;
     empGender!: string;
     empSalary!: number;
-    startDate!: Date;
+    startDate!: string;
     note!: string;
 
 

@@ -4,12 +4,13 @@
             Employee Details
             <div class="emp-count">{{employeeCount}}</div>
         </div>
-        <a  class="add-button" routerLink= "/form" >
+        <a class="add-button" routerLink="/form">
             <img src="../../../assets/icons/add-24px.svg" alt="">Add User</a>
-    </div>  
+    </div>
     <div class="table-main">
         <table id="table-display" class="table">
             <tr>
+                <!-- Table Headers -->
                 <th></th>
                 <th>Name</th>
                 <th>Gender</th>
@@ -18,7 +19,8 @@
                 <th>Start Date</th>
                 <th>Actions</th>
             </tr>
-            <tr *ngFor = "let emplpoyee of employeeDetails">
+            <!-- Employee Details in Table Rows -->
+            <tr *ngFor="let emplpoyee of employeeDetails">
                 <td>
                     <img class="profile" src={{emplpoyee.empProfilePic}} alt="">
                 </td>
@@ -29,14 +31,14 @@
                         {{empDepartment}}
                     </div>
                 </td>
-                <td>{{emplpoyee.empSalary}}</td>
-                <td>{{emplpoyee.startDate}}</td>
+                <td>&#8377; {{emplpoyee.empSalary}}</td>
+                <td>{{emplpoyee.startDate | pipeTansform}}</td>
+                <!--To update and delete an employee from the database-->
                 <td>
-                    <img id="1" onclick="remove(this)"
-                        src="../assets/icons/delete-black-18dp.svg"
-                        alt="delete">
-                    <img id="1" onclick="update(this)"
-                        src="../assets/icons/create-black-18dp.svg" alt="edit">
+                    <img id={{emplpoyee.empId}} (click)="remove(emplpoyee.empId)"
+                        src="../assets/icons/delete-black-18dp.svg" alt="delete">
+                    <img id={{emplpoyee.empId}} (click)="update(emplpoyee)" src="../assets/icons/create-black-18dp.svg"
+                        alt="edit">
                 </td>
             </tr>
         </table>
